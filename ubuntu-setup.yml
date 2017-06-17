@@ -1,7 +1,6 @@
 ---
 - hosts: localhost
   connection: local
-  become: yes
 
   pre_tasks:
     - name: Read vars file
@@ -29,6 +28,14 @@
         name: "{{ username }}"
         shell: /bin/zsh
 
+    - name: Copy global gitignore file
+      template:
+        src: gitignore_global.j2
+        dest: ~/.gitignore_global
+
+    - name: Enable global gitignore file
+      command: git config --global core.excludesfile ~/.gitignore_global
+
   roles:
     - role: kosssi.phpstorm
-    - role: tschifftner.chrome
+    - {role: tschifftner.chrome, become: yes}
