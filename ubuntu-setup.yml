@@ -1,0 +1,19 @@
+---
+- hosts: localhost
+  connection: local
+  become: yes
+
+  pre_tasks:
+    - name: Read vars file
+      include_vars: vars.yml
+
+    - name: Install packages
+      package:
+        name: "{{ item }}"
+        state: present
+      with_items: "{{ packages_to_install }}"
+      
+  roles:
+    - role: kosssi.phpstorm
+    - role: tschifftner.chrome
+    - role: gantsign.oh-my-zsh

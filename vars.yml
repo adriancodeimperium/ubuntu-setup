@@ -1,0 +1,26 @@
+---
+ohmyzsh_users:
+  - adrian
+ohmyzsh_plugins:
+  - git
+  - composer
+  - sudo
+phpstorm_version: 2017.1
+packages_to_install:
+  - terminator
+  - git
+  - mysql-client
+  - mysql-server
+  - mysql-workbench
+  - php7.0
+  - php7.0-cli
+  - php7.0-curl
+  - php7.0-mysql
+  - unity-tweak-tool
+  - zsh
+  - htop
+  - virtualbox
+  - wget
+  - gnuplot
+  - vagrant
+  - enigmail
