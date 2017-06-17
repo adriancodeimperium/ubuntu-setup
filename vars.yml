@@ -1,10 +1,10 @@
 ---
-ohmyzsh_users:
-  - adrian
+username: adrian
 ohmyzsh_plugins:
   - git
   - composer
   - sudo
+ohmyzsh_theme: robbyrussell
 phpstorm_version: 2017.1
 packages_to_install:
   - terminator

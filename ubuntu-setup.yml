@@ -13,7 +13,22 @@
         state: present
       with_items: "{{ packages_to_install }}"
       
+  post_tasks:
+    - name: Clone oh-my-zsh.
+      git:
+        repo: https://github.com/robbyrussell/oh-my-zsh.git
+        dest: ~/.oh-my-zsh
+
+    - name: Copy .zshrc
+      template:
+        src: zshrc.j2
+        dest: ~/.zshrc
+
+    - name: Change shell.
+      user:
+        name: "{{ username }}"
+        shell: /bin/zsh
+
   roles:
     - role: kosssi.phpstorm
     - role: tschifftner.chrome
-    - role: gantsign.oh-my-zsh
