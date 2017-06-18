@@ -24,3 +24,4 @@ packages_to_install:
   - gnuplot
   - vagrant
   - enigmail
+  - composer
