@@ -7,6 +7,7 @@
       include_vars: vars.yml
 
     - name: Install packages
+      become: yes
       package:
         name: "{{ item }}"
         state: present
